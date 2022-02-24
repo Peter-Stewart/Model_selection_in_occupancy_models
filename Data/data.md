@@ -1,21 +1,21 @@
 ## File list ##
-* **resultsdf_m1_occ**  - model 1 results for scenario with M-bias in occupancy process only
-* **resultsdf_m2_occ**  - model 2 results for scenario with M-bias in occupancy process only
-* **resultsdf_m1_det**  - model 1 results for scenario with M-bias in detection process only
-* **resultsdf_m2_det** - model 2 results for scenario with M-bias in detection process only
-* **resultsdf_m1_occ_det** - model 1 results for scenario with M-bias in occupancy and detection processes
-* **resultsdf_m2_occ_det** - model 2 results for scenario with M-bias in occupancy and detection processes
-* **resultsdf_m3_occ_det** - model 3 results for scenario with M-bias in occupancy and detection processes
-* **resultsdf_m4_occ_det** - model 4 results for scenario with M-bias in occupancy and detection processes
-* **predictions_all_occ** - predictive accuracy metrics for all models in scenario with M-bias in occupancy process only
-* **retrodictions_all_occ** - retrodictive accuracy metrics for all models in scenario with M-bias in occupancy process only
-* **predictions_all_det** - predictive accuracy metrics for all models in scenario with M-bias in detection process only
-* **retrodictions_all_det** - retrodictive accuracy metrics for all models in scenario with M-bias in detection process only
-* **predictions_all_occ_det** - predictive accuracy metrics for all models in scenario with M-bias in occupancy and detection processes
-* **retrodictions_all_occ_det** - retrodictive accuracy metrics for all models in scenario with M-bias in occupancy and detection processes
-* **Akaike_all_occ** - AIC and BIC values and weights for all models in scenario with M-bias in occupancy process only
-* **Akaike_all_det** - AIC and BIC values and weights for all models in scenario with M-bias in detection process only
-* **Akaike_all_occ_det** - AIC and BIC values and weights for all models in scenario with M-bias in occupancy and detection processes
+* **resultsdf_m1_occ.Rdata**  - model 1 results for scenario with M-bias in occupancy process only
+* **resultsdf_m2_occ.Rdata**  - model 2 results for scenario with M-bias in occupancy process only
+* **resultsdf_m1_det.Rdata**  - model 1 results for scenario with M-bias in detection process only
+* **resultsdf_m2_det.Rdata** - model 2 results for scenario with M-bias in detection process only
+* **resultsdf_m1_occ_det.Rdata** - model 1 results for scenario with M-bias in occupancy and detection processes
+* **resultsdf_m2_occ_det.Rdata** - model 2 results for scenario with M-bias in occupancy and detection processes
+* **resultsdf_m3_occ_det.Rdata** - model 3 results for scenario with M-bias in occupancy and detection processes
+* **resultsdf_m4_occ_det.Rdata** - model 4 results for scenario with M-bias in occupancy and detection processes
+* **predictions_all_occ.Rdata** - predictive accuracy metrics for all models in scenario with M-bias in occupancy process only
+* **retrodictions_all_occ.Rdata** - retrodictive accuracy metrics for all models in scenario with M-bias in occupancy process only
+* **predictions_all_det.Rdata** - predictive accuracy metrics for all models in scenario with M-bias in detection process only
+* **retrodictions_all_det.Rdata** - retrodictive accuracy metrics for all models in scenario with M-bias in detection process only
+* **predictions_all_occ_det.Rdata** - predictive accuracy metrics for all models in scenario with M-bias in occupancy and detection processes
+* **retrodictions_all_occ_det.Rdata** - retrodictive accuracy metrics for all models in scenario with M-bias in occupancy and detection processes
+* **Akaike_all_occ.Rdata** - AIC and BIC values and weights for all models in scenario with M-bias in occupancy process only
+* **Akaike_all_det.Rdata** - AIC and BIC values and weights for all models in scenario with M-bias in detection process only
+* **Akaike_all_occ_det.Rdata** - AIC and BIC values and weights for all models in scenario with M-bias in occupancy and detection processes
 
 
 ## Variable descriptions ##
