@@ -52,8 +52,8 @@ p1 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub1_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X)) +
   theme_classic()
 
 # Scenario 1, model 2
@@ -65,8 +65,8 @@ p2 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub2_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X + D") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X + D)) +
   theme_classic()
 
 # Scenario 2, model 1
@@ -78,8 +78,8 @@ p3 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub3_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X, p ~ U") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X * ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 2, model 2
@@ -91,8 +91,8 @@ p4 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub4_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on Psi") +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X * ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 1
@@ -104,8 +104,8 @@ p5 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub5_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X, p ~ U") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X * ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 2
@@ -117,8 +117,8 @@ p6 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub6_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X + D, p ~ U") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 3
@@ -130,8 +130,8 @@ p7 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub7_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X * ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 4
@@ -143,8 +143,8 @@ p8 <- ggplot(NULL, aes(x=B1, y=X.est)) +
   geom_point(data = sub8_in, shape=19, colour ="#426fb3", size=1.5) +
   geom_abline(slope=1, intercept=0, linetype="dashed", size=1) +
   xlim(-1,1) + ylim(-10,10) +
-  xlab("True effect of X on ¦×") + ylab("Estimated effect of X on ¦×") +
-  ggtitle("¦× ~ X + D, p ~ U + R") +
+  xlab(expression("True effect of X on "* psi)) + ylab(expression("Estimated effect of X on " * psi)) +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Arrange plots in grid
@@ -161,7 +161,7 @@ p9 <- ggplot(predictions_all_occ, aes(x=m1_prop_in95ci, y=m1_mean_abs_error)) +
   geom_density2d_filled(show.legend = FALSE) +
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X") +
+  ggtitle(expression(psi * " ~ " * X)) +
   theme_classic()
 
 # Scenario 1, model 2
@@ -169,7 +169,7 @@ p10 <- ggplot(predictions_all_occ, aes(x=m2_prop_in95ci, y=m2_mean_abs_error)) +
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D") +
+  ggtitle(expression(psi * " ~ " * X + D)) +
   theme_classic()
 
 # Scenario 2, model 1
@@ -180,7 +180,7 @@ p11 <- ggplot(predictions_all_det, aes(x=m1_prop_in95ci, y=m1_mean_abs_error)) +
   geom_density2d_filled(show.legend = FALSE, h=c(0.001, 0.005163218)) +
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 2, model 2
@@ -191,7 +191,7 @@ p12 <- ggplot(predictions_all_det, aes(x=m2_prop_in95ci, y=m2_mean_abs_error)) +
   geom_density2d_filled(show.legend = FALSE, h=c(0.001, 0.005090337)) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 1
@@ -199,7 +199,7 @@ p13 <- ggplot(predictions_all_occ_det, aes(x=m1_prop_in95ci, y=m1_mean_abs_error
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 2
@@ -207,7 +207,7 @@ p14 <- ggplot(predictions_all_occ_det, aes(x=m2_prop_in95ci, y=m2_mean_abs_error
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 3
@@ -215,7 +215,7 @@ p15 <- ggplot(predictions_all_occ_det, aes(x=m3_prop_in95ci, y=m3_mean_abs_error
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 4
@@ -223,7 +223,7 @@ p16 <- ggplot(predictions_all_occ_det, aes(x=m4_prop_in95ci, y=m4_mean_abs_error
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Arrange plots in grid
@@ -266,7 +266,7 @@ p17 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X") +
+  ggtitle(expression(psi * " ~ " * X)) +
   theme_classic()
 
 # Scenario 1, model 2
@@ -280,7 +280,7 @@ p18 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X + D") +
+  ggtitle(expression(psi * " ~ " * X + D)) +
   theme_classic()
 
 
@@ -295,7 +295,7 @@ p19 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 2, model 2
@@ -309,7 +309,7 @@ p20 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 1
@@ -323,7 +323,7 @@ p21 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 2
@@ -337,7 +337,7 @@ p22 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X + D, p ~ U") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 3
@@ -351,7 +351,7 @@ p23 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 4
@@ -365,7 +365,7 @@ p24 <- ggplot(NULL, aes(x=1:1000)) +
   geom_abline(slope=0, intercept=0, lty=2, size=1) + 
   geom_abline(slope=0, intercept=1, lty=2, size=1) +
   geom_abline(slope=0, intercept=0.5, lty=3, size=1) +
-  ggtitle("¦× ~ X + D, p ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Arrange plots in grid
@@ -383,7 +383,7 @@ ps1a <- ggplot(retrodictions_all_occ, aes(x=m1_prop_in95ci, y=m1_mean_abs_error)
   geom_density2d_filled(show.legend = FALSE) +
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X") +
+  ggtitle(expression(psi * " ~ " * X)) +
   theme_classic()
 
 # Scenario 1, model 2
@@ -391,7 +391,7 @@ ps1b <- ggplot(retrodictions_all_occ, aes(x=m2_prop_in95ci, y=m2_mean_abs_error)
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D") +
+  ggtitle(expression(psi * " ~ " * X + D)) +
   theme_classic()
 
 # Scenario 2, model 1
@@ -402,7 +402,7 @@ ps1c <- ggplot(retrodictions_all_det, aes(x=m1_prop_in95ci, y=m1_mean_abs_error)
   geom_density2d_filled(show.legend = FALSE, h=c(0.001, 0.005165063)) +
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, P ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 2, model 2
@@ -413,7 +413,7 @@ ps1d <- ggplot(retrodictions_all_det, aes(x=m2_prop_in95ci, y=m2_mean_abs_error)
   geom_density2d_filled(show.legend = FALSE, h=c(0.001, 0.005091841)) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, P ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 1
@@ -421,7 +421,7 @@ ps1e <- ggplot(retrodictions_all_occ_det, aes(x=m1_prop_in95ci, y=m1_mean_abs_er
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, P ~ U") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 2
@@ -429,7 +429,7 @@ ps1f <- ggplot(retrodictions_all_occ_det, aes(x=m2_prop_in95ci, y=m2_mean_abs_er
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D, P ~ U") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U)) +
   theme_classic()
 
 # Scenario 3, model 3
@@ -437,7 +437,7 @@ ps1g <- ggplot(retrodictions_all_occ_det, aes(x=m3_prop_in95ci, y=m3_mean_abs_er
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X, P ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Scenario 3, model 4
@@ -445,7 +445,7 @@ ps1h <- ggplot(retrodictions_all_occ_det, aes(x=m4_prop_in95ci, y=m4_mean_abs_er
   geom_density2d_filled(show.legend = FALSE) + 
   ylab("Mean absolute error") + xlab("Proportion in 95% C.I.") +
   xlim(0, 1) + ylim(0, 0.2) +
-  ggtitle("¦× ~ X + D, P ~ U + R") +
+  ggtitle(expression(psi * " ~ " * X + D* ", " * p * " ~ " * U + R)) +
   theme_classic()
 
 # Arrange plots in grid
@@ -464,39 +464,44 @@ b4 <- resultsdf_m1_occ$B4
 b5 <- resultsdf_m1_occ$B5
 check <- cbind(b1, b2, b3, b4, b5, Akaike_all_occ)
 check2 <- check %>% select(b1, b2, b3, b4, b5, m1_weight, m1_BIC_weight)
-pairs(check2, upper.panel = NULL, labels = c("¦ÂX¦×","¦ÂAX","¦ÂAD","¦ÂCD","¦ÂC¦×","Akaike weight", "BIC weight"))
+pairs(check2, upper.panel = NULL, labels = c(expression(beta*X*psi),
+                                             expression(beta*A*X),
+                                             expression(beta*A*D),
+                                             expression(beta*C*D),
+                                             expression(beta*C*psi)
+                                             ,"Akaike weight", "BIC weight"))
 
 # Figure S3 ####
 # Histograms of parameter values when estimate of X effect is in 95% CI for scenario 1, model 2
 check <- resultsdf_m2_occ %>% select(B1, B2, B3, B4, B5, X.in95ci) %>% filter(X.in95ci==1)
 par(mfrow=c(2,3))
-hist(check$B1, breaks = 50, main = "¦ÂX¦×", xlab = "Value") 
-hist(check$B2, breaks = 50, main = "¦ÂAX", xlab = "Value") 
-hist(check$B3, breaks = 50, main = "¦ÂAD", xlab = "Value") 
-hist(check$B4, breaks = 50, main = "¦ÂCD", xlab = "Value")
-hist(check$B5, breaks = 50, main = "¦ÂC¦×", xlab = "Value")
+hist(check$B1, breaks = 50, main = expression(beta*X*psi), xlab = "Value") 
+hist(check$B2, breaks = 50, main = expression(beta*A*X), xlab = "Value") 
+hist(check$B3, breaks = 50, main = expression(beta*A*D), xlab = "Value") 
+hist(check$B4, breaks = 50, main = expression(beta*C*D), xlab = "Value")
+hist(check$B5, breaks = 50, main = expression(beta*C*psi), xlab = "Value")
 par(mfrow=c(1,1))
 
 # Figure S4 ####
 # Histograms of parameter values when estimate of X effect is in 95% CI for scenario 3, model 2
 check <- resultsdf_m2_occ_det %>% select(B1, B2, B3, B4, B5, X.in95ci) %>% filter(X.in95ci==1)
 par(mfrow=c(2,3))
-hist(check$B1, breaks = 50, main = "¦ÂX¦×", xlab = "Value") 
-hist(check$B2, breaks = 50, main = "¦ÂAX", xlab = "Value") 
-hist(check$B3, breaks = 50, main = "¦ÂAD", xlab = "Value") 
-hist(check$B4, breaks = 50, main = "¦ÂCD", xlab = "Value")
-hist(check$B5, breaks = 50, main = "¦ÂC¦×", xlab = "Value")
+hist(check$B1, breaks = 50, main = expression(beta*X*psi), xlab = "Value") 
+hist(check$B2, breaks = 50, main = expression(beta*A*X), xlab = "Value") 
+hist(check$B3, breaks = 50, main = expression(beta*A*D), xlab = "Value") 
+hist(check$B4, breaks = 50, main = expression(beta*C*D), xlab = "Value")
+hist(check$B5, breaks = 50, main = expression(beta*C*psi), xlab = "Value")
 par(mfrow=c(1,1))
 
 # Figure S5 ####
 # Histograms of parameter values when estimate of X effect is in 95% CI for scenario 3, model 4
 check <- resultsdf_m4_occ_det %>% select(B1, B2, B3, B4, B5, X.in95ci) %>% filter(X.in95ci==1)
 par(mfrow=c(2,3))
-hist(check$B1, breaks = 50, main = "¦ÂX¦×", xlab = "Value") 
-hist(check$B2, breaks = 50, main = "¦ÂAX", xlab = "Value") 
-hist(check$B3, breaks = 50, main = "¦ÂAD", xlab = "Value") 
-hist(check$B4, breaks = 50, main = "¦ÂCD", xlab = "Value")
-hist(check$B5, breaks = 50, main = "¦ÂC¦×", xlab = "Value")
+hist(check$B1, breaks = 50, main = expression(beta*X*psi), xlab = "Value") 
+hist(check$B2, breaks = 50, main = expression(beta*A*X), xlab = "Value") 
+hist(check$B3, breaks = 50, main = expression(beta*A*D), xlab = "Value") 
+hist(check$B4, breaks = 50, main = expression(beta*C*D), xlab = "Value")
+hist(check$B5, breaks = 50, main = expression(beta*C*psi), xlab = "Value")
 par(mfrow=c(1,1))
 
 # Figure S6 ####
@@ -508,4 +513,9 @@ b4 <- resultsdf_m3_occ_det$B4
 b5 <- resultsdf_m3_occ_det$B5
 check <- cbind(b1, b2, b3, b4, b5, Akaike_all_occ_det)
 check2 <- check %>% select(b1, b2, b3, b4, b5, m3_weight, m3_BIC_weight)
-pairs(check2, upper.panel = NULL, labels = c("¦ÂX¦×","¦ÂAX","¦ÂAD","¦ÂCD","¦ÂC¦×","Akaike weight", "BIC weight"))
+pairs(check2, upper.panel = NULL, labels = c(expression(beta*X*psi),
+                                             expression(beta*A*X),
+                                             expression(beta*A*D),
+                                             expression(beta*C*D),
+                                             expression(beta*C*psi)
+                                             ,"Akaike weight", "BIC weight"))
