@@ -15,8 +15,9 @@ reps <- 1e4
 # Number of observations in dataset
 N <- 1e3
 
-# Empty list to store results
+# Empty lists to store results and the data from each iteration
 results <- list()
+df_list1 <- list()
 
 # Simulation loop
 for(run in 1:reps){
@@ -65,6 +66,7 @@ for(run in 1:reps){
   runresult <- as.data.frame(cbind(B1,m1est,m2est,m1AIC,m2AIC))
   
   results[[run]] <- runresult
+  df_list1[[run]] <- df
 }
 
 # Turn results list into a dataframe
@@ -93,8 +95,9 @@ reps <- 1e4
 # Number of observations in dataset
 N <- 1e3
 
-# Empty list to store results
+# Empty list to store results and the data from each iteration
 results <- list()
+df_list2 <- list()
 
 # Simulation loop
 for(run in 1:reps){
@@ -130,7 +133,7 @@ for(run in 1:reps){
   m1est <- coef(m1)['X']
   m1AIC <- AIC(m1)
   
-
+  
   m2 <- lm(Y~X+Z, data = df)
   m2est <- coef(m2)['X']
   m2AIC <- AIC(m2)
@@ -139,8 +142,9 @@ for(run in 1:reps){
   run <- paste('run:',run,sep='')
   
   runresult <- as.data.frame(cbind(B1,m1est,m2est, m1AIC, m2AIC))
- 
+  
   results[[run]] <- runresult
+  df_list2[[run]] <- df
 }
 
 # Turn results list into a dataframe
@@ -158,7 +162,7 @@ resultsdf$deltaAIC <- resultsdf$m1AIC - resultsdf$m2AIC
 colliderAIC <- resultsdf$deltaAIC
 
 results_collider <- resultsdf %>% select(m1absbias, m2absbias) %>% 
-                            pivot_longer(everything())
+  pivot_longer(everything())
 results_collider$model <- as.factor(ifelse(results_collider$name=="m1absbias","Y ~ X","Y ~ X + Z"))
 
 
@@ -180,16 +184,51 @@ p2 <- ggplot(results_collider, aes(x = model, y = value)) +
 grid1 <- plot_grid(p1, p2, nrow=1, labels = c("A","B"))
 
 # AIC support for each model
-AICdf <- as.data.frame(cbind(colliderAIC, forkAIC))
+forkAIC <- as.data.frame(forkAIC)
+colliderAIC <- as.data.frame(colliderAIC)
+forkAIC$scenario <- as.factor("classical_confound")
+colliderAIC$scenario <- as.factor("collider_bias")
+colnames(forkAIC) <- c("deltaAIC", "scenario")
+colnames(colliderAIC) <- c("deltaAIC", "scenario")
+AICdf <- rbind(forkAIC, colliderAIC)
 
-p3 <- ggplot(AICdf, aes(x=x)) +
-  geom_histogram(aes(x = forkAIC, y = ..count..), fill="#69b3a2", binwidth = 20 ) + 
-  geom_histogram( aes(x = colliderAIC, y = -..count..), fill= "#404080", binwidth = 20) +
+p3 <- ggplot(AICdf, aes(x = deltaAIC, fill = scenario)) +
+  geom_histogram( color="#3E4A89FF", alpha=0.6, position = 'identity', boundary = 0) +
+  scale_fill_manual(values=c("#31688EFF", "#35B779FF")) +
   xlab("DeltaAIC (AIC[Y ~ X] - AIC[Y ~ X + Z])") +
   ylab("Number of simulations") +
-  xlim(-500,2000) +
-  geom_vline(xintercept = 0, lty = 2) +
-  theme_classic()
+  xlim(c(-500, 2000)) +
+  geom_vline(xintercept = 0, lty = 2, lwd=1) +
+  theme_classic() +
+  theme(legend.position = "none")
 
-fig2 <- plot_grid(grid1, p3, nrow=2, labels = c("", "C"))
+# Examining multicollinearity
+cmat1 <- matrix(NA, nrow=length(df_list1), ncol = 1)
+for(i in 1:length(df_list1)){
+  cmat1[i,1] <- cor(df_list1[[i]][,1], df_list1[[i]][,3])
+}
 
+cmat2 <- matrix(NA, nrow=length(df_list2), ncol = 1)
+for(i in 1:length(df_list2)){
+  cmat2[i,1] <- cor(df_list2[[i]][,1], df_list2[[i]][,3])
+}
+
+cmat1 <- as.data.frame(cmat1)
+cmat2 <- as.data.frame(cmat2)
+
+cmat1$scenario <- as.factor("classical_confound")
+cmat2$scenario <- as.factor("collider_bias")
+cmat <- rbind(cmat1, cmat2)
+cmat$V1_abs <- abs(cmat$V1)
+
+p4 <- ggplot(cmat, aes(x = V1_abs, fill = scenario)) +
+  geom_histogram( color="#3E4A89FF", alpha=0.6, position = 'identity', boundary = 0) +
+  scale_fill_manual(values=c("#31688EFF", "#35B779FF")) +
+  xlab("X-Z correlation (absolute)") +
+  ylab("Number of simulations") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+
+# Collect figures together in one panel
+fig2 <- plot_grid(grid1, p3, p4, nrow=3, labels = c("", "C", "D"))
