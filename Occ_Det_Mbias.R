@@ -16,7 +16,7 @@ set.seed(1751) # Seed for random numbers
 
 # Study design ####
 sites <- 3000 # Number of sites
-K <- 40 # Number of times each site is surveyed
+K <- 2 # Number of times each site is surveyed
 
 # Empty lists to store results ####
 # Results for each model
