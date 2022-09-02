@@ -1,3 +1,6 @@
+## Overview ##
+This folder contains subfolders with the results dataframes for the main text (simulations with K=2) and supplementary material (simulations with K=40). The list of dataframes in each subfolder, and the variable descriptions for each dataframe, are:
+
 ## File list ##
 * **resultsdf_m1_occ.Rdata**  - model 1 results for scenario with M-bias in occupancy process only
 * **resultsdf_m2_occ.Rdata**  - model 2 results for scenario with M-bias in occupancy process only
